@@ -67,7 +67,7 @@ const movieSlice = createSlice({
             return { ...state, shows: payload}
         },
         [fetchAsyncMovieOrShowDetail.fulfilled]: (state, { payload }) => {
-            console.log("Shows Fetched Successfully")
+            console.log("Details Fetched Successfully")
             return { ...state, selectMovieOrShow: payload}
         }
     }
@@ -76,4 +76,5 @@ const movieSlice = createSlice({
 export const { addMovies } = movieSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
+export const getSelectedMoviesOrShow = (state) => state.movies.selectMovieOrShow;
 export default movieSlice.reducer;
