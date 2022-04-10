@@ -10,6 +10,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const submitHandler = (e) => {
     e.preventDefault();
+    if(term === "") return alert("Enter some movie or show title!")
     dispatch(fetchAsyncMovies(term))
     dispatch(fetchAsyncShows(term))
     setTerm("")
